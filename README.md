@@ -1,5 +1,5 @@
 # Host-To-Port
-Convert a hostname `/[a-z0-9\-\.]{255}/` into the smallest possible unique port.
+Convert a hostname `/[a-z0-9\-\.]{3,255}/` into the smallest possible unique port.
 
 # Installation
 
