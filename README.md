@@ -20,7 +20,6 @@ toPort("abcd.com"); //-> 10357
 // Narrowing the range will increase the likelyhood of collisions.
 
 toPort("abc.com", [10000, 20000]); //-> 10307
-toPort("abc.com", [10000, 10306]); //-> Error!
 ```
 
 # Limitations
