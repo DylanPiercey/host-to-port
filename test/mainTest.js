@@ -14,7 +14,6 @@ describe("host-to-port", function () {
 
 	it("should accept a starting and ending range", function () {
 		assert.equal(toPort("abc.com", [100, 10000]), 407);
-		assert.throws(toPort.bind(null, "9".repeat(509)));
-		assert.throws(toPort.bind(null, "abc.com", [100, 406]));
+		assert.equal(toPort("9".repeat(100000)), 42406);
 	});
 });

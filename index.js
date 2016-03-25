@@ -65,16 +65,14 @@ function hostToPort (hostname, range) {
 		port += CHAR_MAP[hostname[i]] || 0;
 	}
 
-	// We ensure unique values here by forcing different lengths to start at different values.
+	// We ensure more unique values here by forcing different lengths to start at different values.
 	// "9" -> 39
 	// "ee" -> 40
 	port += 38 * (hostname.length - 1);
 
 	// Check to see if we have gone over the port range.
 	// This means the host name is super long or the range is too narrow.
-	if (port > max) {
-		throw new Error("Host-To-Port: " + hostname + " causes port to be out of range.");
-	}
+	while (port > max) port -= max;
 
 	return port;
 }
