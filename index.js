@@ -48,7 +48,7 @@ var CHAR_MAP = {
 module.exports = hostToPort;
 
 /**
- * Gets a valid unique port for a given hostname.
+ * Gets a valid port for a given hostname.
  *
  * @param {String} hostname - the hostname to convert to a port.
  * @param {Array} [range] - optional port range to generate ports in.
@@ -65,7 +65,7 @@ function hostToPort (hostname, range) {
 		port += CHAR_MAP[hostname[i]] || 0;
 	}
 
-	// We ensure more unique values here by forcing different lengths to start at different values.
+	// We ensure make more unique values here by forcing different lengths to start at different values.
 	// "9" -> 39
 	// "ee" -> 40
 	port += 38 * (hostname.length - 1);
